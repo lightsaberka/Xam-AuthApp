@@ -1,5 +1,6 @@
 ﻿using MvvmCross.IoC;
 using MvvmCross.ViewModels;
+using Plugin.Fingerprint;
 using XamarinAuthentication.Core.ViewModels.Home;
 
 namespace XamarinAuthentication.Core
@@ -8,12 +9,12 @@ namespace XamarinAuthentication.Core
     {
         public override void Initialize()
         {
-            CreatableTypes()
+	        this.CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<HomeViewModel>();
+	        this.RegisterAppStart<HomeViewModel>();
         }
     }
 }

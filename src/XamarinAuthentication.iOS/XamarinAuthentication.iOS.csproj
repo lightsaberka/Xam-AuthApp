@@ -13,6 +13,7 @@
     <AssemblyName>XamarinAuthentication.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ProvisioningType>manual</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +24,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--linkskip=XamarinAuthentication.Core --linkskip=XamarinAuthentication.UI</MtouchExtraArgs>
@@ -47,7 +48,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -65,6 +66,9 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchExtraArgs>--linkskip=XamarinAuthentication.Core --linkskip=XamarinAuthentication.UI</MtouchExtraArgs>
     <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
@@ -99,13 +103,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
-      <Version>7.0.0</Version>
+      <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
-      <Version>7.0.0</Version>
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Plugins.Fingerprint">
+      <Version>2.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.5.3.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.8.0.1269</Version>
+      <Version>4.8.0.1451</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -217,4 +227,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarXamarinAuthenticationiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

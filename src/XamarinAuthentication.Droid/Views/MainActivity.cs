@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
+using Plugin.CurrentActivity;
+using Plugin.Fingerprint;
 using XamarinAuthentication.Core.ViewModels.Main;
 
 namespace XamarinAuthentication.Droid.Views
@@ -14,6 +16,9 @@ namespace XamarinAuthentication.Droid.Views
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            CrossCurrentActivity.Current.Init(this, bundle);
+            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
         }
     }
 }

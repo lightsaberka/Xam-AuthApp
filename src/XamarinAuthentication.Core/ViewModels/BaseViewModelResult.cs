@@ -9,7 +9,7 @@ namespace XamarinAuthentication.Core.ViewModels
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            if (viewFinishing && this.CloseCompletionSource?.Task.IsCompleted == false && !CloseCompletionSource.Task.IsFaulted)
+            if (viewFinishing && this.CloseCompletionSource?.Task.IsCompleted == false && !this.CloseCompletionSource.Task.IsFaulted)
 				this.CloseCompletionSource?.TrySetCanceled();
 
             base.ViewDestroy(viewFinishing);
