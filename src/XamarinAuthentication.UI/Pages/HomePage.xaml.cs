@@ -1,4 +1,3 @@
-using System;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
 using XamarinAuthentication.Core.ViewModels.Home;
@@ -8,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace XamarinAuthentication.UI.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	[MvxContentPagePresentation(WrapInNavigationPage = true)]
+	[MvxContentPagePresentation(WrapInNavigationPage = false)]
 	public partial class HomePage : MvxContentPage<HomeViewModel>
 	{
 		public HomePage()
@@ -24,11 +23,6 @@ namespace XamarinAuthentication.UI.Pages
 				navigationPage.BarTextColor = Color.White;
 				navigationPage.BarBackgroundColor = (Color) Application.Current.Resources["PrimaryColor"];
 			}
-		}
-
-		private void Button_Clicked(object sender, EventArgs e)
-		{
-			this.ViewModel.Authenticate();
 		}
 	}
 }

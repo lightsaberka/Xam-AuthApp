@@ -136,9 +136,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_mvvmcross_logo.png" />
     <AndroidResource Include="Resources\values-v19\styles.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\XamarinAuthentication.Core\XamarinAuthentication.Core.csproj">
       <Project>{5B44E944-88FB-4A02-B7CF-C00E3A6FF42C}</Project>

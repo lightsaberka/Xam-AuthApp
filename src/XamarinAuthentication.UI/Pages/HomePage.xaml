@@ -13,8 +13,9 @@
 
 		<StackLayout>
 
-			<Button Text="Biometric authentication" x:Name="AuthButton"    
-			        Clicked="Button_Clicked"    
+			<Button x:Name="AuthButton"
+			        Text="Biometric authentication"     
+			        Command="{Binding AuthenticateCommand}" 
 			        HorizontalOptions="Center"    
 			        VerticalOptions="CenterAndExpand" />
 
