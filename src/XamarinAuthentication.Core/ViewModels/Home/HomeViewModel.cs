@@ -35,6 +35,7 @@ namespace XamarinAuthentication.Core.ViewModels.Home
 
 		/// <summary>
 		/// Authenticate user using his Biometric information or PIN/pattern.
+		/// If succesfull, go inside the application.
 		/// </summary>
 		/// <returns></returns>
 		private async Task Authenticate() 
@@ -51,7 +52,7 @@ namespace XamarinAuthentication.Core.ViewModels.Home
 			// configure authentication prompt
 		    var conf = new AuthenticationRequestConfiguration("Authentication", "We need Your biometric information for authentication.");
 		    
-		    // allow usage of PIN/pattern if the biometric authentication is not succefull
+		    // allow PIN/pattern authentication if biometric is unsuccesfull
 		    conf.AllowAlternativeAuthentication = true;
 
 		    var authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);

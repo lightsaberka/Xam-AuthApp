@@ -1,22 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:MvxContentPage x:TypeArguments="dashboard:DashboardViewModel"
-                      xmlns="http://xamarin.com/schemas/2014/forms"
-                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-                      xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-                      xmlns:local="clr-namespace:XamarinAuthentication.UI.Pages"
-                      xmlns:viewModels="clr-namespace:XamarinAuthentication.Core.ViewModels;assembly=XamarinAuthentication.Core"
-                      xmlns:dashboard="clr-namespace:XamarinAuthentication.Core.ViewModels.Dashboard;assembly=XamarinAuthentication.Core"
-                      x:Class="XamarinAuthentication.UI.Pages.DashboardPage"
-                      Title="Dashboard">
+<views:MvxContentPage
+	x:TypeArguments="dashboard:DashboardViewModel"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+	xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+	xmlns:dashboard="clr-namespace:XamarinAuthentication.Core.ViewModels.Dashboard;assembly=XamarinAuthentication.Core"
+	x:Class="XamarinAuthentication.UI.Pages.DashboardPage"
+	Title="Dashboard"
+	IconImageSource="home">
 
 	<ContentPage.Content>
+		<ScrollView>
+			<Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto">
 
-		<StackLayout>
+				<Label Grid.Row="0" Text="Cities" Margin="16, 16, 16, 0" FontSize="Title"></Label>
 
+				<CollectionView
+					x:Name="HorizontalCollection"
+					Grid.Row="1"
+					Margin="16, 16, 0, 0"
+					HorizontalScrollBarVisibility="Never"
+					VerticalScrollBarVisibility="Never"
+					HeightRequest="112"
+					ItemsSource="{Binding Cities}">
 
-		</StackLayout>
+					<CollectionView.ItemsLayout>
+						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal"></LinearItemsLayout>
+					</CollectionView.ItemsLayout>
 
+					<CollectionView.ItemTemplate>
+						<DataTemplate>
+							<pancake:PancakeView WidthRequest="72" CornerRadius="16">
+								<Image Source="{Binding .}" Aspect="AspectFill" WidthRequest="40"></Image>
+							</pancake:PancakeView>
+						</DataTemplate>
+					</CollectionView.ItemTemplate>
+				</CollectionView>
+
+				<Grid Grid.Row="2" Margin="16, 16, 16, 0">
+					<pancake:PancakeView CornerRadius="16" BackgroundColor="WhiteSmoke" VerticalOptions="Start" Padding="16">
+						<Grid ColumnDefinitions="Auto, Auto" RowDefinitions="*">
+							<Image Grid.Column="0" Source="cicmany" Aspect="AspectFit" WidthRequest="40"></Image>
+							<Label Grid.Column="1" Text="Hello World!" FontSize="Caption"></Label>
+						</Grid>
+					</pancake:PancakeView>
+				</Grid>
+
+				<Label Grid.Row="3" Text="Something" Margin="16, 16, 16, 0" FontSize="Title"></Label>
+
+			</Grid>
+		</ScrollView>
 	</ContentPage.Content>
 
 </views:MvxContentPage>

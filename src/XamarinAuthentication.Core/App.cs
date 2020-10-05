@@ -1,6 +1,5 @@
 ﻿using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using Plugin.Fingerprint;
 using XamarinAuthentication.Core.ViewModels.Home;
 
 namespace XamarinAuthentication.Core

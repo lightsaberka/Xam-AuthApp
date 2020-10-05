@@ -21,6 +21,9 @@ namespace XamarinAuthentication.UI.Pages
 
 			// set tabs on Android to the bottom
 			this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+			
+			// disable swiping tabs on Android
+			this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
 
 			if (this._firstTime) {
 				this.ViewModel.ShowTabsCommand.ExecuteAsync(null);

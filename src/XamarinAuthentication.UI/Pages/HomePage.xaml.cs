@@ -1,8 +1,8 @@
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
-using XamarinAuthentication.Core.ViewModels.Home;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinAuthentication.Core.ViewModels.Home;
 
 namespace XamarinAuthentication.UI.Pages
 {

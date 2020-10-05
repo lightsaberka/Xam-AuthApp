@@ -1,4 +1,6 @@
-﻿namespace XamarinAuthentication.Core.Models
+﻿using System.Collections.Generic;
+
+namespace XamarinAuthentication.Core.Models
 {
 	public class User
 	{
