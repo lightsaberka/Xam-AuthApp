@@ -14,8 +14,8 @@
 
 			<pancake:PancakeView CornerRadius="16"
 			                     BackgroundColor="WhiteSmoke" 
-								 Margin="16"
-			                     HeightRequest="56" VerticalOptions="Center">
+								 Margin="16, 0, 16, 32"
+			                     HeightRequest="56" VerticalOptions="End">
 
 				<Label Text="Log In" FontSize="Title"
 				       HorizontalOptions="Center" VerticalOptions="Center"></Label>
