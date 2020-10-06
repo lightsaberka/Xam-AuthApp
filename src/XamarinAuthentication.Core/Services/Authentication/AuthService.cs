@@ -9,9 +9,9 @@ namespace XamarinAuthentication.Core.Services.Authentication
 	{
 		public async Task<bool> Authenticate()
 		{
-			var isFingerprintAvailable = await CrossFingerprint.Current.IsAvailableAsync(true);
+			var isAuthenticationAvailable = await CrossFingerprint.Current.IsAvailableAsync(true);
 
-			if (!isFingerprintAvailable) {
+			if (!isAuthenticationAvailable) {
 
 				// todo: android - ask to configure if possible
 

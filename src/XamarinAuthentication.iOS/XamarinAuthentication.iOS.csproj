@@ -92,6 +92,12 @@
     <ImageAsset Include="Media.xcassets\cicmany.imageset\cicmany.jpg">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Media.xcassets\email.imageset\email.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\girl.imageset\girl.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Media.xcassets\home.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -107,7 +113,19 @@
     <ImageAsset Include="Media.xcassets\cicmany.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Media.xcassets\girl.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\email.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\pin.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Media.xcassets\kosice.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\pin.imageset\pin.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\standford.imageset\Contents.json">
@@ -292,7 +310,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionXamarinAuthenticationiOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarXamarinAuthenticationiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarXamarinAuthenticationiOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionXamarinAuthenticationiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

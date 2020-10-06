@@ -14,12 +14,16 @@ namespace XamarinAuthentication.Core.Services.DataService
 				return this._user;
 			}
 
-			this._user = new User("Veronika", 26, "Brno");
+			this._user = new User("Veronika", "Brno", "girl", "email@email.cz");
 			return this._user;
 		}
 
 		public List<string> GetCities()
 		{
+			if (this._cities != null) {
+				return this._cities;
+			}
+
 			this._cities = new List<string> { "brno", "kosice", "wales", "standford", "stiavnica", "vlkolinec", "cicmany", "bojnice" };
 			return this._cities;
 		}

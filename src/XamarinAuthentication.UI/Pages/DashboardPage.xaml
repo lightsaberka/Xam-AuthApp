@@ -14,40 +14,49 @@
 		<ScrollView>
 			<Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto">
 
-				<Label Grid.Row="0" Text="Cities" Margin="16, 16, 16, 0" FontSize="Title"></Label>
+				<Label Grid.Row="0" Text="Cities" Margin="16, 16, 16, 0" FontSize="24" />
 
 				<CollectionView
-					x:Name="HorizontalCollection"
+					x:Name="CitiesCollection"
 					Grid.Row="1"
 					Margin="16, 16, 0, 0"
 					HorizontalScrollBarVisibility="Never"
 					VerticalScrollBarVisibility="Never"
 					HeightRequest="112"
+					Footer="{OnPlatform Android='', iOS='iOS: Cities'}"
 					ItemsSource="{Binding Cities}">
 
 					<CollectionView.ItemsLayout>
-						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal"></LinearItemsLayout>
+						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
 					</CollectionView.ItemsLayout>
 
 					<CollectionView.ItemTemplate>
 						<DataTemplate>
 							<pancake:PancakeView WidthRequest="72" CornerRadius="16">
-								<Image Source="{Binding .}" Aspect="AspectFill" WidthRequest="40"></Image>
+								<Image Source="{Binding .}" Aspect="AspectFill" WidthRequest="72" />
 							</pancake:PancakeView>
 						</DataTemplate>
 					</CollectionView.ItemTemplate>
 				</CollectionView>
 
 				<Grid Grid.Row="2" Margin="16, 16, 16, 0">
-					<pancake:PancakeView CornerRadius="16" BackgroundColor="WhiteSmoke" VerticalOptions="Start" Padding="16">
+					<pancake:PancakeView CornerRadius="16" BackgroundColor="WhiteSmoke" VerticalOptions="Start" Padding="8">
 						<Grid ColumnDefinitions="Auto, Auto" RowDefinitions="*">
-							<Image Grid.Column="0" Source="cicmany" Aspect="AspectFit" WidthRequest="40"></Image>
-							<Label Grid.Column="1" Text="Hello World!" FontSize="Caption"></Label>
+
+							<pancake:PancakeView Grid.Column="0" WidthRequest="72" HeightRequest="56" CornerRadius="16">
+								<Image Source="cicmany" Aspect="AspectFill" WidthRequest="72" />
+							</pancake:PancakeView>
+
+							<StackLayout Grid.Column="1" Orientation="Vertical" Margin="8">
+								<Label Text="Čičmany" FontSize="14" />
+								<Label Text="Slovakia" FontSize="10" TextColor="DimGray" />
+							</StackLayout>
+
 						</Grid>
 					</pancake:PancakeView>
 				</Grid>
 
-				<Label Grid.Row="3" Text="Something" Margin="16, 16, 16, 0" FontSize="Title"></Label>
+				<Label Grid.Row="3" Text="Something" Margin="16, 16, 16, 0" FontSize="24" />
 
 			</Grid>
 		</ScrollView>
