@@ -16,5 +16,11 @@ namespace XamarinAuthentication.Core.Services.DataService
 		/// </summary>
 		/// <returns>Sample cities</returns>
 		List<string> GetCities();
+
+		/// <summary>
+		/// Returns sample lorem ipsum text.
+		/// </summary>
+		/// <returns>Sample lorem ipsum text</returns>
+		string GetLoremIpsum();
 	}
 }

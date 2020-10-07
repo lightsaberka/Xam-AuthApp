@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
-using System.Windows.Input;
+using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 using XamarinAuthentication.Core.Models;
 using XamarinAuthentication.Core.Services.DataService;
 
@@ -15,6 +14,8 @@ namespace XamarinAuthentication.Core.ViewModels.UserProfile
 		private readonly IExampleDataService _exampleDataService;
 
 		public User CurrentUser { get; set; }
+
+		public string LoremIpsum { get; set; }
 
 		public UserViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IExampleDataService exampleDataService) 
 			: base(logProvider, navigationService)
@@ -27,6 +28,9 @@ namespace XamarinAuthentication.Core.ViewModels.UserProfile
 			this.CurrentUser = this._exampleDataService.GetUser();
 			this.RaisePropertyChanged(nameof(this.CurrentUser));
 
+			this.LoremIpsum = this._exampleDataService.GetLoremIpsum();
+			this.RaisePropertyChanged(nameof(this.LoremIpsum));
+
 			return base.Initialize();
 		}
 
@@ -34,7 +38,12 @@ namespace XamarinAuthentication.Core.ViewModels.UserProfile
 		/// Open default e-mail application to send e-mail to provided e-mail address.
 		/// note: On iOS this works only on real device, not simulator.
 		/// </summary>
-		public ICommand OpenEmailCommand => new Command<string>(async (email) => await Launcher.OpenAsync($"mailto:{email}"));
+		public IMvxCommand OpenEmailCommand => new MvxCommand<string>(async (email) => await Launcher.OpenAsync($"mailto:{email}"));
+
+		/// <summary>
+		/// Open url address in default internet browser.
+		/// </summary>
+		public IMvxCommand OpenUrlCommand => new MvxCommand<string>(async (url) => await Launcher.OpenAsync(url));
 
 	}
 }

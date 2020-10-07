@@ -13,24 +13,24 @@
 	<ContentPage.Content>
 		<ScrollView>
 			<Grid>
-				<pancake:PancakeView Margin="0, 200, 0, 0" Padding="0, 200, 0, 0"
+				<pancake:PancakeView Margin="0, 160, 0, 0" Padding="0, 56, 0, 0"
 									 CornerRadius="56, 56, 0, 0"
 									 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
 				                     BackgroundColor="WhiteSmoke">
 
-					<Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto"
+					<Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
 					      ColumnSpacing="16" RowSpacing="8">
 
 						<Label Grid.ColumnSpan="2" Grid.Row="0" Margin="16" FontSize="24" Text="{Binding CurrentUser.Name}" />
 						
 						<StackLayout Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal">
-							<Image Margin="16, 0, 0, 0" Source="pin" WidthRequest="16" HeightRequest="16" VerticalOptions="Center" />
-							<Label Margin="16, 0, 16, 0" FontSize="16" Text="{Binding CurrentUser.Hometown}" VerticalOptions="Center" />
+							<Image Margin="16, 0, 0, 0" Source="pin" WidthRequest="16" HeightRequest="16" VerticalOptions="End" />
+							<Label Margin="16, 0, 16, 0" FontSize="16" Text="{Binding CurrentUser.Hometown}" VerticalOptions="End" />
 						</StackLayout>
 
 						<StackLayout Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal">
-							<Image Margin="16, 0, 0, 0" Source="email" WidthRequest="16" HeightRequest="16" VerticalOptions="Center"/>
-							<Label Margin="16, 0, 16, 0" FontSize="16" VerticalOptions="Center"
+							<Image Margin="16, 0, 0, 0" Source="email" WidthRequest="16" HeightRequest="16" VerticalOptions="End"/>
+							<Label Margin="16, 0, 16, 0" FontSize="16" VerticalOptions="End"
 							       Text="{Binding CurrentUser.Email}" TextDecorations="Underline">
 								<Label.GestureRecognizers>
 									<TapGestureRecognizer Command="{Binding OpenEmailCommand}" CommandParameter="{Binding CurrentUser.Email}"/>
@@ -38,9 +38,39 @@
 							</Label>
 						</StackLayout>
 
+						<pancake:PancakeView Grid.Column="0" Grid.Row="3" CornerRadius="16" Margin="16, 16, 0, 0" BackgroundColor="White">
+							<StackLayout Orientation="Vertical" Margin="8">
+								<Label Text="lightsaberka" FontSize="14" HorizontalOptions="Center" FontAttributes="Bold" />
+								<Label Text="GitHub" FontSize="10" TextColor="DimGray" HorizontalOptions="Center" />
+							</StackLayout>
+
+							<pancake:PancakeView.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding CurrentUser.GitHubUrl}"/>
+							</pancake:PancakeView.GestureRecognizers>
+						</pancake:PancakeView>
+
+						<pancake:PancakeView Grid.Column="1" Grid.Row="3" CornerRadius="16" Margin="0, 16, 16, 0" BackgroundColor="White">
+							<StackLayout Orientation="Vertical" Margin="8">
+								<Label Text="Haste Heist" FontSize="14" HorizontalOptions="Center" FontAttributes="Bold" />
+								<Label Text="STEAM" FontSize="10" TextColor="DimGray" HorizontalOptions="Center" />
+							</StackLayout>
+
+							<pancake:PancakeView.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding CurrentUser.SteamUrl}"/>
+							</pancake:PancakeView.GestureRecognizers>
+						</pancake:PancakeView>
+
+						<Label Grid.Column="0" Grid.Row="4" Margin="16, 16, 16, 0" FontSize="24" Text="Bio" />
+
+						<Label Grid.ColumnSpan="2" Grid.Row="5" Margin="16" FontSize="14" Text="{Binding LoremIpsum}"></Label>
 
 					</Grid>
 				</pancake:PancakeView>
+
+				<Image Margin="100,40,0,0"
+				       Aspect="AspectFit" WidthRequest="200" 
+				       HorizontalOptions="Center" VerticalOptions="Start"
+				       Source="{Binding CurrentUser.Photo}" />
 
 			</Grid>
 		</ScrollView>

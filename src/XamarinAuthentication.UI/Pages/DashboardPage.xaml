@@ -23,7 +23,7 @@
 					HorizontalScrollBarVisibility="Never"
 					VerticalScrollBarVisibility="Never"
 					HeightRequest="112"
-					Footer="{OnPlatform Android='', iOS='iOS: Cities'}"
+					Footer="{OnPlatform Android='', iOS='iOS:Cities'}"
 					ItemsSource="{Binding Cities}">
 
 					<CollectionView.ItemsLayout>
