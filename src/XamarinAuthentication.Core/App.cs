@@ -1,5 +1,6 @@
 ﻿using MvvmCross.IoC;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 using XamarinAuthentication.Core.ViewModels.Home;
 
 namespace XamarinAuthentication.Core
@@ -14,6 +15,8 @@ namespace XamarinAuthentication.Core
                 .RegisterAsLazySingleton();
 
 	        this.RegisterAppStart<HomeViewModel>();
+
+	        Device.SetFlags(new string[] { "CarouselView_Experimental" });
         }
     }
 }

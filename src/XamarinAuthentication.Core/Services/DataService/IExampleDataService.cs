@@ -22,5 +22,11 @@ namespace XamarinAuthentication.Core.Services.DataService
 		/// </summary>
 		/// <returns>Sample lorem ipsum text</returns>
 		string GetLoremIpsum();
+
+		/// <summary>
+		/// Generates and returns sample starships.
+		/// </summary>
+		/// <returns>Sample starships</returns>
+		List<Starship> GetStarships();
 	}
 }

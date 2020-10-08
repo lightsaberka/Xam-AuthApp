@@ -16,15 +16,10 @@
 
 				<Label Grid.Row="0" Text="Cities" Margin="16, 16, 16, 0" FontSize="24" />
 
-				<CollectionView
-					x:Name="CitiesCollection"
-					Grid.Row="1"
-					Margin="16, 16, 0, 0"
-					HorizontalScrollBarVisibility="Never"
-					VerticalScrollBarVisibility="Never"
-					HeightRequest="112"
-					Footer="{OnPlatform Android='', iOS='iOS:Cities'}"
-					ItemsSource="{Binding Cities}">
+				<CollectionView Grid.Row="1" ItemsSource="{Binding Cities}"
+					Margin="16, 16, 0, 0" HeightRequest="112"
+					HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
+					Footer="{OnPlatform Android='', iOS='iOS:Cities'}">
 
 					<CollectionView.ItemsLayout>
 						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
@@ -44,19 +39,49 @@
 						<Grid ColumnDefinitions="Auto, Auto" RowDefinitions="*">
 
 							<pancake:PancakeView Grid.Column="0" WidthRequest="72" HeightRequest="56" CornerRadius="16">
-								<Image Source="cicmany" Aspect="AspectFill" WidthRequest="72" />
+								<Image Source="crew" Aspect="AspectFill" WidthRequest="72" />
 							</pancake:PancakeView>
 
 							<StackLayout Grid.Column="1" Orientation="Vertical" Margin="8">
-								<Label Text="Čičmany" FontSize="14" />
-								<Label Text="Slovakia" FontSize="10" TextColor="DimGray" />
+								<Label Text="The Kryten-ed crew" FontSize="14" />
+								<Label Text="Red Dwarf" FontSize="10" TextColor="DimGray" />
 							</StackLayout>
 
 						</Grid>
 					</pancake:PancakeView>
 				</Grid>
 
-				<Label Grid.Row="3" Text="Something" Margin="16, 16, 16, 0" FontSize="24" />
+				<Label Grid.Row="3" Text="Starships" Margin="16, 8, 16, 0" FontSize="24" />
+
+				<CarouselView Grid.Row="4" ItemsSource="{Binding Starships}" Margin="16" HeightRequest="296"
+				              HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+
+					<CarouselView.ItemsLayout>
+						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" SnapPointsAlignment="Start" SnapPointsType="Mandatory"/>
+					</CarouselView.ItemsLayout>
+
+					<CarouselView.ItemTemplate>
+						<DataTemplate>
+							<pancake:PancakeView CornerRadius="16" BackgroundColor="WhiteSmoke">
+								<Grid>
+
+									<Image Source="{Binding Photo}" Margin="-16,-16,-16,0"
+									       Aspect="AspectFill" VerticalOptions="Start" HeightRequest="200" />
+
+									<Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *" VerticalOptions="End" Margin="16, 0, 16, 0">
+										<Label Grid.ColumnSpan="2" Grid.Row="0" Text="{Binding Name}" FontSize="24" />
+										<Label Grid.ColumnSpan="2" Grid.Row="1" Text="{Binding Type}" FontSize="14" />
+
+										<Label Grid.Column="0" Grid.Row="2" Text="{Binding Year}" FontSize="10" TextColor="DimGray" HorizontalOptions="Start"/>
+										<Label Grid.Column="1" Grid.Row="2" Text="{Binding Length}" FontSize="10" TextColor="DimGray" HorizontalOptions="End"/>
+									</Grid>
+
+								</Grid>
+							</pancake:PancakeView>
+						</DataTemplate>
+					</CarouselView.ItemTemplate>
+
+				</CarouselView>
 
 			</Grid>
 		</ScrollView>

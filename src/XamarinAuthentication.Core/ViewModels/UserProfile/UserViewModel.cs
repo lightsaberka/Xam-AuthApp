@@ -26,10 +26,7 @@ namespace XamarinAuthentication.Core.ViewModels.UserProfile
 		public override Task Initialize()
 		{
 			this.CurrentUser = this._exampleDataService.GetUser();
-			this.RaisePropertyChanged(nameof(this.CurrentUser));
-
 			this.LoremIpsum = this._exampleDataService.GetLoremIpsum();
-			this.RaisePropertyChanged(nameof(this.LoremIpsum));
 
 			return base.Initialize();
 		}

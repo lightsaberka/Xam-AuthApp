@@ -9,6 +9,8 @@ namespace XamarinAuthentication.Core.Services.DataService
 
 		private List<string> _cities;
 
+		private List<Starship> _starships;
+
 		private string _loremIpsum = "These are the voyages of the Starship Enterprise.\n\nIts continuing mission, " +
 		                             "to explore strange new worlds, to seek out new life and new civilizations, " +
 		                             "to boldly go where no one has gone before. We need to neutralize the homing signal. " +
@@ -46,6 +48,18 @@ namespace XamarinAuthentication.Core.Services.DataService
 		public string GetLoremIpsum()
 		{
 			return this._loremIpsum;
+		}
+
+		public List<Starship> GetStarships()
+		{
+			if (this._starships != null) {
+				return this._starships;
+			}
+			var enterprise = new Starship("USS Enterprise", "NCC-1701 (Shuttlecraft)", 2245, "288.646 m", "enterprise");
+			var sulaco = new Starship("USS Sulaco", "8 UD-4L (Utility dropship)", 2122, "385 m", "sulaco");
+
+			this._starships = new List<Starship> {enterprise, sulaco};
+			return this._starships;
 		}
 	}
 }

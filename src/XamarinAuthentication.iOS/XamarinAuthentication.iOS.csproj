@@ -92,7 +92,13 @@
     <ImageAsset Include="Media.xcassets\cicmany.imageset\cicmany.jpg">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Media.xcassets\crew.imageset\crew.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Media.xcassets\email.imageset\email.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\enterprise.imageset\enterprise.jpg">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\girl.imageset\girl.png">
@@ -119,6 +125,15 @@
     <ImageAsset Include="Media.xcassets\email.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Media.xcassets\crew.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\sulaco.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\enterprise.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Media.xcassets\pin.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -132,6 +147,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\stiavnica.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\sulaco.imageset\sulaco.jpg">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\vlkolinec.imageset\Contents.json">
@@ -310,7 +328,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarXamarinAuthenticationiOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionXamarinAuthenticationiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionXamarinAuthenticationiOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarXamarinAuthenticationiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

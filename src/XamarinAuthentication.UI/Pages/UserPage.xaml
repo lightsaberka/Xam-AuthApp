@@ -13,9 +13,10 @@
 	<ContentPage.Content>
 		<ScrollView>
 			<Grid>
+
 				<pancake:PancakeView Margin="0, 160, 0, 0" Padding="0, 56, 0, 0"
-									 CornerRadius="56, 56, 0, 0"
-									 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+				                     CornerRadius="56, 56, 0, 0"
+				                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
 				                     BackgroundColor="WhiteSmoke">
 
 					<Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
@@ -29,16 +30,20 @@
 						</StackLayout>
 
 						<StackLayout Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal">
+
 							<Image Margin="16, 0, 0, 0" Source="email" WidthRequest="16" HeightRequest="16" VerticalOptions="End"/>
+							
 							<Label Margin="16, 0, 16, 0" FontSize="16" VerticalOptions="End"
 							       Text="{Binding CurrentUser.Email}" TextDecorations="Underline">
 								<Label.GestureRecognizers>
 									<TapGestureRecognizer Command="{Binding OpenEmailCommand}" CommandParameter="{Binding CurrentUser.Email}"/>
 								</Label.GestureRecognizers>
 							</Label>
+
 						</StackLayout>
 
 						<pancake:PancakeView Grid.Column="0" Grid.Row="3" CornerRadius="16" Margin="16, 16, 0, 0" BackgroundColor="White">
+							
 							<StackLayout Orientation="Vertical" Margin="8">
 								<Label Text="lightsaberka" FontSize="14" HorizontalOptions="Center" FontAttributes="Bold" />
 								<Label Text="GitHub" FontSize="10" TextColor="DimGray" HorizontalOptions="Center" />
@@ -47,9 +52,11 @@
 							<pancake:PancakeView.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding CurrentUser.GitHubUrl}"/>
 							</pancake:PancakeView.GestureRecognizers>
+
 						</pancake:PancakeView>
 
 						<pancake:PancakeView Grid.Column="1" Grid.Row="3" CornerRadius="16" Margin="0, 16, 16, 0" BackgroundColor="White">
+							
 							<StackLayout Orientation="Vertical" Margin="8">
 								<Label Text="Haste Heist" FontSize="14" HorizontalOptions="Center" FontAttributes="Bold" />
 								<Label Text="STEAM" FontSize="10" TextColor="DimGray" HorizontalOptions="Center" />
@@ -58,6 +65,7 @@
 							<pancake:PancakeView.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding CurrentUser.SteamUrl}"/>
 							</pancake:PancakeView.GestureRecognizers>
+
 						</pancake:PancakeView>
 
 						<Label Grid.Column="0" Grid.Row="4" Margin="16, 16, 16, 0" FontSize="24" Text="Bio" />
