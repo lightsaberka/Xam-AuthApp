@@ -1,3 +1,4 @@
+using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using Xamarin.Essentials;
@@ -29,7 +30,13 @@ namespace XamarinAuthentication.Core.ViewModels.Home
 			    if (this._authenticateCommand == null) {
 				    this._authenticateCommand = new MvxAsyncCommand(async () =>
 				    {
-					    if (await this._authService.Authenticate()) {
+					    var wasAuthenticated = false;
+
+					    using (UserDialogs.Instance.Loading()) {
+						    wasAuthenticated = await this._authService.Authenticate();
+					    }
+
+					    if (wasAuthenticated) {
 						    await this._navigationService.Navigate<TabsRootViewModel>();
 					    }
 				    });
