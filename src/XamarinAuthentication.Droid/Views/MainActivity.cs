@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
 using Plugin.CurrentActivity;
@@ -19,6 +20,7 @@ namespace XamarinAuthentication.Droid.Views
 
             CrossCurrentActivity.Current.Init(this, bundle);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
+            UserDialogs.Init(this);
         }
     }
 }
